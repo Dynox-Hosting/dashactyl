@@ -66,6 +66,17 @@ module.exports.load = async function(app, ifValidAPI, ejs) {
       panel_id = panelinfo.id;
 
       if (panelinfo.password) generated_password = panelinfo.password;
+
+      dbinfo = {
+        discord_id: userinfo.id,
+        pterodactyl_id: panelinfo.id,
+        coins: 0,
+        package: null,
+        ram: null,
+        disk: null,
+        cpu: null,
+        servers: null
+      };
     } else {
       // Fetch account information.
 
