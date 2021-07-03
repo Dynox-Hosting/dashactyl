@@ -1,0 +1,75 @@
+website:
+  port: 8000
+  secret: 'password'
+  secure: false # This option requires https.
+
+discord:
+  id: "Insert your Discord OAuth2 application ID here. [Don't forget the 'http(s)://'!]"
+  secret: "Insert your Discord OAuth2 application secret here."
+  callbackpath: "http://localhost:8000/callback"
+  prompt: false 
+
+pterodactyl:
+  domain: "Insert your Pterodactyl panel domain here. [Don't forget the 'http(s)://'!]"
+  key: "Insert your Pterodactyl panel application key here. [Don't forget to give it the read and write permissions.]
+  generate_password_on_sign_up: true
+
+database:
+  host: "Insert your database domain or ip here."
+  port: "Insert your database port here."
+  user: "Insert your database username here."
+  password: "Insert your database password here."
+  database: "dashactyl"
+
+api:
+  'apicodepassword':
+    'some permission': true
+
+locations:
+  "1":
+    name: "Location Name"
+    package: null
+
+eggs:
+  paper:
+    display: Paper
+    minimum:
+      ram: 1024,
+      disk: 1024,
+      cpu: 100
+    maximum:
+      ram: null
+      disk: null
+      cpu: null
+    info:
+      egg: 3
+      feature_limits:
+        databases: 1
+        backups: 1
+  bungeecord:
+    display: Bungeecord
+    minimum:
+      ram: 512
+      disk: 512
+      cpu: 75
+    maximum:
+      ram: null
+      disk: null
+      cpu: null
+    info:
+      egg: 1
+      feature_limits:
+        databases: 1
+        backups: 1
+
+packages:
+  default: "default"
+  list:
+    default:
+      ram: 1024
+      disk: 1024
+      cpu: 100
+      servers: 1
+    
+arcio:
+  enabled: true

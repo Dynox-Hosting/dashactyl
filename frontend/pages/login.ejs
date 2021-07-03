@@ -1,0 +1,5 @@
+<% if (variables) { %>
+    <%= JSON.stringify(variables) %>
+<% } %>
+
+<% if (data && data.panelinfo) { %><p><a href="/dashboard">Dashboard</a></p><% } else { %><p><a href="/login">Login</a></p><% } %>

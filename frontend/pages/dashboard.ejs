@@ -1,0 +1,20 @@
+<h1>Welcome <%= data.userinfo.username %>#<%= data.userinfo.discriminator %>!</h1>
+
+<%= variables ? (variables.password ? `New Password: ${variables.password}` : "") : "" %>
+
+<p>Panel link: <a href="<%= settings.pterodactyl.domain %>"><%= settings.pterodactyl.domain %></a></p>
+<p>Username: <%= data.panelinfo.username %></p>
+<p>Coins: <%= data.dbinfo.coins %></p>
+<p>Package Name: <%= package.name %></p>
+<p>RAM: <%= total.ram %></p>
+<p>Disk: <%= total.disk %></p>
+<p>CPU: <%= total.cpu %></p>
+<p>Servers: <%= total.servers %></p>
+
+<form action="/regen" method="POST">
+  <input type="submit" value="Regen Pass">
+</form>
+
+<form action="/update_info" method="POST">
+  <input type="submit" value="Update User Information">
+</form>

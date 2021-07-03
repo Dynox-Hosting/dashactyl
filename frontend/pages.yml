@@ -1,0 +1,64 @@
+# Page settings are automatically updated every minute.
+
+index: login.ejs
+nopermission: nopermission.ejs
+notfound: 404.ejs
+renderfail: rendererror.ejs
+
+pages:
+  dashboard:
+    file: dashboard.ejs
+    permission: 1 # 0 = anyone, 1 = must be logged in, 2 = administrator
+    no_permission_redirect: /login
+  test:
+    file: file.ejs
+    permission: 0
+  arc-sw.js:
+    file: ../assets/js/arc-sw.js
+    permission: 0
+    type: js
+  loginpage: 
+    file: login.ejs
+    permission: 0
+
+redirectactions:
+  logout:
+    path: "/"
+
+  oauth2:
+    cancelledloginaction:
+      path: "/?err=CANCELLED"
+    missingcode:
+      path: "/?err=MISSINGCODE"
+    invalidcode:
+      path: "/?err=INVALIDCODE"
+    badscopes:
+      path: "/?err=INVALIDSCOPES"
+    unverified:
+      path: "/?err=UNVERIFIED"
+    anotheraccount:
+      path: "/?err=ANOTHERACCOUNT"
+    cannotgetinfo:
+      path: "/?err=CANNOTGETINFO"
+    success:
+      path: "/dashboard"
+  regenerate_password:
+    notsignedin:
+      path: "/?err=NOTLOGGEDIN"
+    success:
+      path: "/dashboard?success=regen"
+    
+  update_info:
+    notsignedin:
+      path: "/?err=NOTLOGGEDIN"
+    error:
+      path: "/?err=ERROR"
+    success:
+      path: "/dashboard?success=updateinfo"
+
+  test:
+    future: stuff
+
+apimessages:
+  invalidAPIkey: "Invalid API key."
+  missingAPIPermissions: "The provided API key does not have the required permissions."
